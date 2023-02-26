@@ -1,6 +1,6 @@
 let connection;
 
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -11,27 +11,34 @@ const setupInput = function (conn) {
 };
 
 
-const handleUserInput = function (key) {      
-    if (key === '\u0003') {
-      process.exit();
-    }
+const handleUserInput = function(key) {
+  //  console.log(key);
+  // Ctrl-C to exit
+  if (key === '\u0003') {
+    process.exit();
+  }
 
-    if (key === "w") {
-      connection.write("Move: up");
-    }
+  // Using arrow keys to move the snake
+  // Letter 'q' sends a Hi message
+  if (key === "\u001b[A") {
+    connection.write("Move: up");
+  }
+    
+  if (key === "\u001b[D") {
+    connection.write("Move: left");
+  }
 
-    if (key === "a") {
-      connection.write("Move: left");
-    }
+  if (key === "\u001b[B") {
+    connection.write("Move: down");
+  }
 
-    if (key === "s") {
-      connection.write("Move: down");
-    }
+  if (key === "\u001b[C") {
+    connection.write("Move: right");
+  }
 
-    if (key === "d") {
-      connection.write("Move: right");
-    } 
- 
+  if (key === "q") {
+    connection.write("Say: Hi");
+  }
 
 };
 
