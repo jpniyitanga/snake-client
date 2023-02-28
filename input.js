@@ -13,31 +13,23 @@ const setupInput = function(conn) {
 
 const handleUserInput = function(key) {
   
-  // Ctrl-C to exit
-  if (key === '\u0003') {
-    process.exit();
-  }
+  const moves = {
+    w: 'Move: up',
+    a: 'Move: left',
+    s: 'Move: down',
+    d: 'Move: right'
+  };
+
+
+  if ('w' === key || 'a' === key || 's' === key || 'd' === key) {
+    connection.write(moves[key]);
+  };
+
+
 
   
-  // Letter 'q' sends a Hi message
-  if (key === "w") {
-    connection.write("Move: up");
-  }
-    
-  if (key === "a") {
-    connection.write("Move: left");
-  }
-
-  if (key === "s") {
-    connection.write("Move: down");
-  }
-
-  if (key === "d") {
-    connection.write("Move: right");
-  }
-
-  if (key === "q") {
-    connection.write("Say: Hi");
+  if (key === "\u0003") {
+    process.exit();
   }
 
 };
