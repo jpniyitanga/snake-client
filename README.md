@@ -17,5 +17,5 @@ Before you can run this client, you will need to be running the server side whic
 
 - Follow steps inside the snek server repo to run the server side
 - Run the development snake client using the `node play.js` command
-- Use arrow keys to move a snake in different directions
-- Press 'q' to send a message to the server
+- Use w, a, s, and d keys to move up, left, down and right
+- Press 'q' to send the message 'Hi' to the server
