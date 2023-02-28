@@ -3,7 +3,8 @@ const setupInput = require("./input.js");
 
 
 
-console.log("Connected...");
+console.log("Connecting...");
+console.log("Successfully connected.");
 
 
 setupInput(connect());
