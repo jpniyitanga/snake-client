@@ -1,3 +1,5 @@
+const {moves} = require('./constants');
+const {messages} = require('./constants');
 let connection;
 
 const setupInput = function(conn) {
@@ -12,24 +14,11 @@ const setupInput = function(conn) {
 
 
 const handleUserInput = function(key) {
-  
-  const moves = {
-    w: 'Move: up',
-    a: 'Move: left',
-    s: 'Move: down',
-    d: 'Move: right'
-  };
-
 
   if ('w' === key || 'a' === key || 's' === key || 'd' === key) {
     connection.write(moves[key]);
   }
 
-  const messages = {
-    j: 'Say: Hi',
-    k: 'Say: Hello',
-    l: 'Say: Goodbye'
-  };
 
   if ('j' === key || 'k' === key || 'l' === key) {
     connection.write(messages[key]);
