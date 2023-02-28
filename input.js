@@ -23,7 +23,7 @@ const handleUserInput = function(key) {
 
   if ('w' === key || 'a' === key || 's' === key || 'd' === key) {
     connection.write(moves[key]);
-  };
+  }
 
   const messages = {
     j: 'Say: Hi',
@@ -33,7 +33,7 @@ const handleUserInput = function(key) {
 
   if ('j' === key || 'k' === key || 'l' === key) {
     connection.write(messages[key]);
-  };
+  }
 
   
   if (key === "\u0003") {
