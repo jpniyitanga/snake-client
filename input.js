@@ -25,7 +25,15 @@ const handleUserInput = function(key) {
     connection.write(moves[key]);
   };
 
+  const messages = {
+    j: 'Say: Hi',
+    k: 'Say: Hello',
+    l: 'Say: Goodbye'
+  };
 
+  if ('j' === key || 'k' === key || 'l' === key) {
+    connection.write(messages[key]);
+  };
 
   
   if (key === "\u0003") {
